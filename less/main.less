@@ -1,0 +1,23 @@
+@import (inline) "../bower_components/bootswatch/paper/bootstrap.css";
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 750px;
+    }
+}
+
+.contact-details {
+  // text-align: right;
+  span {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .identity {
+    text-align: center;
+    .name-role, .contact-details {
+      text-align: center;
+    }
+  }
+}
