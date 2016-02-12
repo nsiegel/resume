@@ -1,0 +1,29 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "My resume",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yassi/resume.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yassi/resume/issues"
+  },
+  "homepage": "https://github.com/yassi/resume#readme",
+  "dependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.0.5",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-shell": "^0.5.2",
+    "markdown-resume": "^0.1.0",
+    "sass": "^0.5.0"
+  }
+}
