@@ -7535,3 +7535,6 @@ input[type="checkbox"]:disabled:checked:after,
     text-align: center;
   }
 }
+.sections small {
+  color: black;
+}
