@@ -17,25 +17,30 @@ var settings = {
   theme: argv.theme || 'paper',
 };
 
+var template = {
+  name: 'Yasser Toruno',
+  title: 'Software Engineer',
+  email: 'yasser.toruno@gmail.com',
+  linkedin: 'linkedin.com/in/yassertoruno',
+  github: 'github.com/yassi',
+  city: 'New York, New York,',
+  website: 'yassi.io'
+}
+
 gulp.task('clean', function() {
-  return del([settings.build_dir]);
+  return del([
+    settings.build_dir
+  ]);
 });
 
-gulp.task('build', ['style'], function() {
-  return gulp.src('')
-    .pipe(notify('Resume Compiled'));
-});
 
-gulp.task('style:web', function() {
-  return gulp.src(settings.less_dir + 'main.less')
+gulp.task('style', function(callback) {
+  return gulp.src([settings.less_dir + 'main.less'])
     .pipe(less({modifyVars: {'@theme': settings.theme}}))
     .pipe(gulp.dest(settings.build_dir));
 });
 
-gulp.task('style:pdf', function() {
-  return gulp.src(settings.less_dir + 'pdf.less')
-    .pipe(less({modifyVars: {'@theme': settings.theme}}))
-    .pipe(gulp.dest(settings.build_dir));
+// Compile all html partials
 gulp.task('html', ['style'], function() {
   return gulp.src(
     [
@@ -49,26 +54,32 @@ gulp.task('html', ['style'], function() {
     .pipe(gulp.dest('./'))
 });
 
-gulp.task('style', function(callback) {
-  return runSequence([
-    'style:web',
-    'style:pdf'
-  ], callback);
-});
-
-gulp.task('watch', function() {
-  gulp.watch([
-    settings.less_dir + '**/*.less'
-  ], ['build']);
-});
+// generate a pdf file from compiled html
 gulp.task('pdf', shell.task(
   [
     'wkhtmltopdf',
     '--margin-left ' + settings.margin,
     '--margin-right ' + settings.margin,
+    '--margin-top ' + '20',
+    '--margin-bottom ' + settings.margin,
     '--zoom 1.0',
     '--viewport-size 1280x1024',
-    settings.build_dir + 'resume_printable.html',
-    'resume.pdf'
+    'index_pdf.html',
+    'yasser_toruno_resume.pdf'
   ].join(' ')
 ));
+
+gulp.task('build', ['clean'], function(callback) {
+  return runSequence(
+    ['style', 'html'],
+    'pdf',
+    callback
+  )
+});
+
+gulp.task('watch', function() {
+  gulp.watch([
+    settings.less_dir + '**/*.less',
+    settings.html_dir + '**/*.html'
+  ], ['build']);
+});
