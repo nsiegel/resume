@@ -20,7 +20,7 @@ var settings = {
 var template = {
   name: 'Yasser Toruno',
   title: 'Software Engineer',
-  email: 'yasser.toruno@gmail.com',
+  email: 'ytoruno@gmail.com',
   linkedin: 'linkedin.com/in/yassertoruno',
   github: 'github.com/yassi',
   city: 'New York, New York,',
