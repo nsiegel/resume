@@ -1,12 +1,18 @@
-var gulp = require('gulp');
+var argv = require('yargs').argv;
+
 var del = require('del');
-var notify = require('gulp-notify');
+var gulp = require('gulp');
 var less = require('gulp-less');
+var shell = require('gulp-shell');
+var notify = require('gulp-notify');
+var runSequence = require('run-sequence').use(gulp);
+
 
 var settings = {
   build_dir: './build/',
   less_dir: './less/',
   margin: '15',
+  theme: argv.theme || 'paper',
 };
 
 gulp.task('clean', function() {
@@ -18,10 +24,23 @@ gulp.task('build', ['style'], function() {
     .pipe(notify('Resume Compiled'));
 });
 
-gulp.task('style', ['clean'], function() {
+gulp.task('style:web', function() {
   return gulp.src(settings.less_dir + 'main.less')
-    .pipe(less())
+    .pipe(less({modifyVars: {'@theme': settings.theme}}))
     .pipe(gulp.dest(settings.build_dir));
+});
+
+gulp.task('style:pdf', function() {
+  return gulp.src(settings.less_dir + 'pdf.less')
+    .pipe(less({modifyVars: {'@theme': settings.theme}}))
+    .pipe(gulp.dest(settings.build_dir));
+});
+
+gulp.task('style', function(callback) {
+  return runSequence([
+    'style:web',
+    'style:pdf'
+  ], callback);
 });
 
 gulp.task('watch', function() {
