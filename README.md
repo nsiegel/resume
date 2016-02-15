@@ -6,9 +6,9 @@ The included gulp file will also generate a pdf. Feel free to fork if you find
 this at all useful.
 
 ### Links
-[Resume](resume.yassi.io)
-[Download PDF](resume.yassi.io/yasser_toruno_resume.pdf)
-[website](yassi.io)
+* [Resume](resume.yassi.io)
+* [Download PDF](resume.yassi.io/yasser_toruno_resume.pdf)
+* [website](yassi.io)
 
 ### Build Steps
 This project uses gulp
