@@ -29,7 +29,9 @@ var template = {
 
 gulp.task('clean', function() {
   return del([
-    settings.build_dir
+    settings.build_dir,
+    '*.pdf',
+    '*.html'
   ]);
 });
 
