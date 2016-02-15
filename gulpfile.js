@@ -6,11 +6,13 @@ var less = require('gulp-less');
 var shell = require('gulp-shell');
 var notify = require('gulp-notify');
 var runSequence = require('run-sequence').use(gulp);
+var nunjucksRender = require('gulp-nunjucks-render');
 
 
 var settings = {
   build_dir: './build/',
   less_dir: './less/',
+  html_dir: './html/',
   margin: '15',
   theme: argv.theme || 'paper',
 };
@@ -34,6 +36,17 @@ gulp.task('style:pdf', function() {
   return gulp.src(settings.less_dir + 'pdf.less')
     .pipe(less({modifyVars: {'@theme': settings.theme}}))
     .pipe(gulp.dest(settings.build_dir));
+gulp.task('html', ['style'], function() {
+  return gulp.src(
+    [
+      settings.html_dir + 'index.html',
+      settings.html_dir + 'index_pdf.html',
+    ])
+    .pipe(nunjucksRender({
+      path: settings.html_dir,
+      data: template
+    }))
+    .pipe(gulp.dest('./'))
 });
 
 gulp.task('style', function(callback) {
