@@ -23,6 +23,7 @@
     "gulp": "^3.9.1",
     "gulp-less": "^3.0.5",
     "gulp-notify": "^2.2.0",
+    "gulp-nunjucks-render": "^2.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-shell": "^0.5.2",
     "markdown-resume": "^0.1.0",
