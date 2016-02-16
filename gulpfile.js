@@ -95,7 +95,7 @@ gulp.task('deploy', ['build'], function() {
     settings.build_dir + '**/*'
     ])
     .pipe(ghPages({
-      force: true,
+      force: true, // NOTE: Turn off force pushing on master through github
       push: true,
       branch: 'gh-pages'
     }))
