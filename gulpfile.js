@@ -12,6 +12,7 @@ var nunjucksRender = require('gulp-nunjucks-render');
 
 var settings = {
   build_dir: './build/',
+  publish_dir: './publish/',
   less_dir: './less/',
   html_dir: './html/',
   margin: '15',
@@ -38,6 +39,7 @@ var template = {
 gulp.task('clean', function() {
   return del([
     settings.build_dir,
+    settings.publish_dir,
     '*.pdf',
     '*.html'
   ]);
