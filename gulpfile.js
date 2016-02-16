@@ -12,7 +12,7 @@ var nunjucksRender = require('gulp-nunjucks-render');
 
 var settings = {
   build_dir: './build/',
-  publish_dir: './publish/',
+  publish_dir: './.publish/',
   less_dir: './less/',
   html_dir: './html/',
   margin: '15',
@@ -63,7 +63,7 @@ gulp.task('html', ['style'], function() {
       path: settings.html_dir,
       data: template
     }))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest(settings.build_dir))
 });
 
 // generate a pdf file from compiled html
@@ -76,8 +76,8 @@ gulp.task('pdf', shell.task(
     '--margin-bottom ' + settings.margin,
     '--zoom 1.0',
     '--viewport-size 1280x1024',
-    'index_pdf.html',
-    settings.pdf_file_name
+    settings.build_dir + 'index_pdf.html',
+    settings.build_dir + settings.pdf_file_name
   ].join(' ')
 ));
 
@@ -89,18 +89,17 @@ gulp.task('build', ['clean'], function(callback) {
   )
 });
 
-gulp.task('deploy', function() {
+gulp.task('deploy', ['build'], function() {
   return gulp.src([
-      './CNAME',
-      './build/**/*',
-      'index.html',
-      settings.pdf_file_name
+    './CNAME',
+    settings.build_dir + '**/*'
     ])
     .pipe(ghPages({
       force: true,
       push: false,
       branch: 'gh-pages'
-    }));
+    }))
+    .pipe(notify('Resume deployed'));
 });
 
 gulp.task('watch', function() {
