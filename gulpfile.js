@@ -29,8 +29,9 @@ var template = {
   google_analytics: 'UA-73825922-1',
   gravatar: 's.gravatar.com/avatar/8410e7f74f2457e5a4947347acc19147?s=30',
   url: 'resume.yassi.io',
-  og_description: 'Yasser Toruno is a software engineer in NYC.'
-}
+  description: 'Yasser Toruno is a software engineer based in NYC.',
+  keywords: 'software, development, code, startups, resume, programming'
+};
 
 gulp.task('clean', function() {
   return del([
