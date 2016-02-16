@@ -96,7 +96,7 @@ gulp.task('deploy', ['build'], function() {
     ])
     .pipe(ghPages({
       force: true,
-      push: false,
+      push: true,
       branch: 'gh-pages'
     }))
     .pipe(notify('Resume deployed'));
