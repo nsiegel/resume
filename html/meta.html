@@ -1,6 +1,14 @@
-<title>Yasser Toruno - Software Engineer - NYC</title>
+<title>{{ name }} - {{ title }} - {{ city_short }}</title>
 <meta charset="utf-8" />
 <meta name="description" content="{{ name }} - {{ title }}, NYC" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Open graph meta tags -->
+<meta property="og:title" content="{{ name }} - {{ title }}" />
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ gravatar }}">
+<meta property="og:url" content="{{ url }}">
+<meta property="og:description" content="{{ og_description }}">
+
 <link rel="stylesheet" type="text/css" href="build/main.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">

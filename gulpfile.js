@@ -24,9 +24,12 @@ var template = {
   linkedin: 'linkedin.com/in/yassertoruno',
   github: 'github.com/yassi',
   city: 'New York, New York,',
+  city_short: 'NYC',
   website: 'yassi.io',
   google_analytics: 'UA-73825922-1',
-  gravatar: 's.gravatar.com/avatar/8410e7f74f2457e5a4947347acc19147?s=30'
+  gravatar: 's.gravatar.com/avatar/8410e7f74f2457e5a4947347acc19147?s=30',
+  url: 'resume.yassi.io',
+  og_description: 'Yasser Toruno is a software engineer in NYC.'
 }
 
 gulp.task('clean', function() {
