@@ -25,7 +25,8 @@ var template = {
   github: 'github.com/yassi',
   city: 'New York, New York,',
   website: 'yassi.io',
-  google_analytics: 'UA-73825922-1'
+  google_analytics: 'UA-73825922-1',
+  gravatar: 's.gravatar.com/avatar/8410e7f74f2457e5a4947347acc19147?s=30'
 }
 
 gulp.task('clean', function() {
