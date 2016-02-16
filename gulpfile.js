@@ -24,7 +24,8 @@ var template = {
   linkedin: 'linkedin.com/in/yassertoruno',
   github: 'github.com/yassi',
   city: 'New York, New York,',
-  website: 'yassi.io'
+  website: 'yassi.io',
+  google_analytics: 'UA-73825922-1'
 }
 
 gulp.task('clean', function() {
