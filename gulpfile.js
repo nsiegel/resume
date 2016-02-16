@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var less = require('gulp-less');
 var shell = require('gulp-shell');
 var notify = require('gulp-notify');
+var ghPages = require('gulp-gh-pages');
 var runSequence = require('run-sequence').use(gulp);
 var nunjucksRender = require('gulp-nunjucks-render');
 
@@ -15,6 +16,7 @@ var settings = {
   html_dir: './html/',
   margin: '15',
   theme: argv.theme || 'paper',
+  pdf_file_name: 'yasser_toruno_resume.pdf'
 };
 
 var template = {
@@ -73,7 +75,7 @@ gulp.task('pdf', shell.task(
     '--zoom 1.0',
     '--viewport-size 1280x1024',
     'index_pdf.html',
-    'yasser_toruno_resume.pdf'
+    settings.pdf_file_name
   ].join(' ')
 ));
 
@@ -83,6 +85,20 @@ gulp.task('build', ['clean'], function(callback) {
     'pdf',
     callback
   )
+});
+
+gulp.task('deploy', function() {
+  return gulp.src([
+      './CNAME',
+      './build/**/*',
+      'index.html',
+      settings.pdf_file_name
+    ])
+    .pipe(ghPages({
+      force: true,
+      push: false,
+      branch: 'gh-pages'
+    }));
 });
 
 gulp.task('watch', function() {
