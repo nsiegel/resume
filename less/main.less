@@ -30,4 +30,19 @@
   margin-top: 80px;
 }
 
-.container.pdf {}
+/**
+ * Some themes have non white background colors for containers and white
+ * text. These will obviously not work for the generated pdf, much less for
+ * a resume. This is an override that will force a white background over
+ * dark text. We don't always want to use this, as some of the themes look
+ * great with gray text and custom link colors. Application of this override
+ * is controlled through gulp.
+ * NOTE: the web view will be unchanged, this only affects pdf documents
+ */
+.container.pdf.override {
+  background: #ffffff !important;
+  /** turn all text black **/
+  p, h1,h2,h2,h4,h5,h6, small, li, strong {color: black !important;}
+  /* use the default bootstrap link color */
+  a {color: #337ab7 !important;}
+}

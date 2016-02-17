@@ -16,8 +16,9 @@ var settings = {
   less_dir: './less/',
   html_dir: './html/',
   margin: '15',
+  pdf_file_name: 'yasser_toruno_resume.pdf',
   theme: argv.theme || 'paper',
-  pdf_file_name: 'yasser_toruno_resume.pdf'
+  pdf_override: argv.pdf_override ? true:false
 };
 
 var template = {
@@ -34,7 +35,8 @@ var template = {
   gravatar: 's.gravatar.com/avatar/8410e7f74f2457e5a4947347acc19147?s=30',
   url: 'resume.yassi.io',
   description: 'Yasser Toruno is a software engineer based in NYC.',
-  keywords: 'software, development, code, startups, resume, programming'
+  keywords: 'software, development, code, startups, resume, programming',
+  pdf_override: settings.pdf_override
 };
 
 gulp.task('clean', function() {
@@ -48,8 +50,11 @@ gulp.task('clean', function() {
 
 
 gulp.task('style', function(callback) {
+  var less_vars = {
+    '@theme': settings.theme,
+  };
   return gulp.src([settings.less_dir + 'main.less'])
-    .pipe(less({modifyVars: {'@theme': settings.theme}}))
+    .pipe(less({modifyVars: less_vars}))
     .pipe(gulp.dest(settings.build_dir));
 });
 

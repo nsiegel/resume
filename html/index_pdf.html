@@ -6,7 +6,7 @@
     </style>
   </head>
   <body>
-  <div class="container pdf">
+  <div class="container pdf {% if pdf_override %}override{% else %}{% endif %}">
     <div class="row identity">
       {% include "identity.html" %}
     </div>
