@@ -73,7 +73,7 @@ gulp.task('pdf', shell.task(
     'wkhtmltopdf',
     '--margin-left ' + settings.margin,
     '--margin-right ' + settings.margin,
-    '--margin-top ' + '20',
+    '--margin-top ' + '25',
     '--margin-bottom ' + settings.margin,
     '--zoom 1.0',
     '--viewport-size 1280x1024',
