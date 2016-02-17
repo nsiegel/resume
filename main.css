@@ -7538,35 +7538,3 @@ input[type="checkbox"]:disabled:checked:after,
 .sections small {
   color: black;
 }
-.container.web {
-  margin-top: 80px;
-}
-/**
- * Some themes have non white background colors for containers and white
- * text. These will obviously not work for the generated pdf, much less for
- * a resume. This is an override that will force a white background over
- * dark text. We don't always want to use this, as some of the themes look
- * great with gray text and custom link colors. Application of this override
- * is controlled through gulp.
- * NOTE: the web view will be unchanged, this only affects pdf documents
- */
-.container.pdf.override {
-  background: #ffffff !important;
-  /** turn all text black **/
-  /* use the default bootstrap link color */
-}
-.container.pdf.override p,
-.container.pdf.override h1,
-.container.pdf.override h2,
-.container.pdf.override h2,
-.container.pdf.override h4,
-.container.pdf.override h5,
-.container.pdf.override h6,
-.container.pdf.override small,
-.container.pdf.override li,
-.container.pdf.override strong {
-  color: black !important;
-}
-.container.pdf.override a {
-  color: #337ab7 !important;
-}
