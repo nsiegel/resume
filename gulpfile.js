@@ -26,6 +26,7 @@ var template = {
   email: 'ytoruno@gmail.com',
   linkedin: 'linkedin.com/in/yassertoruno',
   github: 'github.com/yassi',
+  twitter: 'yasser_toruno',
   city: 'New York, New York,',
   city_short: 'NYC',
   website: 'yassi.io',
