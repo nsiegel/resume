@@ -16,27 +16,28 @@ var settings = {
   less_dir: './less/',
   html_dir: './html/',
   margin: '15',
-  pdf_file_name: 'yasser_toruno_resume.pdf',
+  pdf_file_name: 'nicole_siegel_resume.pdf',
   theme: argv.theme || 'paper',
   pdf_override: argv.pdf_override ? true:false
 };
 
 var template = {
-  name: 'Yasser Toruno',
+  name: 'Nicole Siegel',
   title: 'Software Engineer',
-  email: 'ytoruno@gmail.com',
-  linkedin: 'linkedin.com/in/yassertoruno',
-  github: 'github.com/yassi',
-  twitter: 'yasser_toruno',
-  city: 'New York, New York,',
+  email: 'nsiegel2@gmail.com',
+  linkedin: 'linkedin.com/in/nssiegel',
+  github: 'github.com/nsiegel',
+  twitter: '',
+  city: 'New York, New York',
   city_short: 'NYC',
-  website: 'yassi.io',
-  google_analytics: 'UA-73825922-1',
-  gravatar: 's.gravatar.com/avatar/8410e7f74f2457e5a4947347acc19147?s=30',
-  url: 'resume.yassi.io',
-  description: 'Yasser Toruno is a software engineer based in NYC.',
-  keywords: 'software, development, code, startups, resume, programming',
-  pdf_override: settings.pdf_override
+  website: 'nicolesiegel.me',
+  google_analytics: '',
+  gravatar: 's.gravatar.com/avatar/65b71e80648b928d4246ac9f30fb569e?s=30',
+  url: 'resume.nicolesiegel.me',
+  description: 'Nicole Siegel is a software engineer based in NYC.',
+  keywords: 'software, development, code, startups, resume, programming, javascript',
+  pdf_override: settings.pdf_override,
+  pdf_file_name: settings.pdf_file_name
 };
 
 gulp.task('clean', function() {

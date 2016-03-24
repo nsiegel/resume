@@ -22,12 +22,74 @@
   }
 }
 
+body {
+  // padding-top: 20px;
+  padding-bottom: 50px;
+}
+
 .sections small {
-  color: black;
+  color: grey;
+  font-style: italic;
 }
 
 .container.web {
   margin-top: 80px;
+}
+
+p, h1,h2,h3,h4,h5,h6, small, li, strong {
+  font-family: 'Raleway', sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  &.skill {
+    li {
+      padding-left: 16px;
+    }
+  }
+}
+
+ul:not(.nav):not(.skill) {
+  li {
+    padding-left: 16px;
+    &:before {
+      content: "-";
+      padding-right: 8px;
+    }
+  }
+}
+
+h1 {
+  font-weight: bolder;
+  font-size: 40px;
+  margin-top: 0;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 25px;
+}
+
+h5 {
+  font-style: italic;
+  margin-top: 3px;
+}
+
+hr {
+  margin-top: 5px;
+}
+
+.dates {
+  float: right;
+  color: grey;
+  margin-top: 2px;
+}
+
+.skills {
+  padding-bottom: 10px;
 }
 
 /**
