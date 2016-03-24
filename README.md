@@ -4,8 +4,8 @@ This is a very simple static (single page) site generator for resumes, along
 with a pdf generated from html. The idea is inpired from [Naeem Khedarun](http://www.sharpfellows.com/post/publishing-your-c-v-on-the-web-and-exporting-pdf-with-added-gulp-and-bootstrap)
 
 ### Example Links
-* [Resume](http://resume.yassi.io)
-* [Generated PDF](http://resume.yassi.io/yasser_toruno_resume.pdf)
+* [Resume](http://resume.nicolesiegel.me)
+* [Generated PDF](http://resume.nicolesiegel.me/nicole_siegel_resume.pdf)
 
 ### Build Steps
 This project uses gulp, which requires Nodejs to be installed.
