@@ -17,8 +17,8 @@ var settings = {
   html_dir: './html/',
   margin: '15',
   pdf_file_name: 'nicole_siegel_resume.pdf',
-  theme: argv.theme || 'paper',
-  pdf_override: argv.pdf_override ? true:false
+  theme: argv.theme || 'lumen',
+  pdf_override: true,
 };
 
 var template = {
@@ -79,7 +79,7 @@ gulp.task('pdf', shell.task(
     'wkhtmltopdf',
     '--margin-left ' + settings.margin,
     '--margin-right ' + settings.margin,
-    '--margin-top ' + '25',
+    '--margin-top ' + settings.margin,
     '--margin-bottom ' + settings.margin,
     '--zoom 1.0',
     '--viewport-size 1280x1024',
