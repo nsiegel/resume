@@ -7278,8 +7278,5 @@ hr {
 .container.pdf.override small,
 .container.pdf.override li,
 .container.pdf.override strong {
-  color: black !important;
-}
-.container.pdf.override a {
-  color: #337ab7 !important;
+  font-family: 'Raleway', sans-serif !important;
 }
